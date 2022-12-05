@@ -1,0 +1,51 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Prediction</title>
+    <link rel="stylesheet" href="static\css\style.css">
+</head>
+
+<body bgcolor="skyblue">
+
+<p align="center" class="heading"><b>Predicting Insurance Premium</b></p>
+<div align="center">
+    <form action="{{ url_for('predict')}}" method="POST">
+        <div class="b"><b>Age</b><br>
+            <input class="a" type="Number" name ="Age" required="required"></div>
+
+        <div class="b"><b>BMI</b><br>
+            <input type="Number" name="BMI" required="required" class="a"></div>
+
+        <div class="b"><b>Number of Children</b><br>
+            <input type="Number" name="Number of Children" required="required" class="a"></div>
+
+        <div class="b"><b>gender</b><br>
+            <select name="Gender" class="a">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            </select></div>
+
+        <div class="b"><b>Smoker</b><br>
+            <select name="Smoker" class="a">
+            <option value="yes">yes</option>
+            <option value="No">No</option>
+            </select></div>
+
+        <div class="b"><b>Region</b><br>
+            <select name="Region" class="a">
+            <option value="Southwest">Southwest</option>
+            <option value="Southeast">Southeast</option>
+            <option value="Northwest">Northwest</option>
+            <option value="Northeast">Northeast</option>
+            </select></div>
+
+
+        <div class="c" align="center"><button type="submit" class="d">Calculate Insurance premium</button></div>
+    </form></div>
+<p align="center" class="heading">{{ prediction_text }}</p>
+</body>
+</html>
+
+
